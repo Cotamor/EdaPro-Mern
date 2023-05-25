@@ -1,0 +1,153 @@
+@import '../../global.scss';
+
+.order {
+  @include themify($themes) {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+
+    .orderContainer {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      .orderLeft {
+        flex: 3;
+        padding: 20px;
+
+        .orderLeftItem {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px;
+          border: 1px solid themed('border');
+          margin-bottom: 10px;
+          .title {
+            font-size: 25px;
+            font-weight: 300;
+            margin-bottom: 10px;
+          }
+          .status {
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid green;
+            background-color: rgba(128, 240, 173, 0.1);
+          }
+          .status.notyet {
+            border: 1px solid lightcoral;
+            background-color: rgba(240, 128, 128, 0.1);
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+              tr {
+                th {
+                  padding: 10px 0;
+                  border-bottom: 1px solid themed('border');
+                }
+                @include mobile {
+                  .productImg {
+                    display: none;
+                  }
+                }
+              }
+            }
+
+            tbody {
+              tr {
+                text-align: center;
+                td {
+                  padding: 10px;
+                  border-bottom: 1px solid themed('border');
+                  img {
+                    width: 70px;
+                    height: 50px;
+                    object-fit: cover;
+                  }
+
+                  select {
+                    width: 40px;
+                    height: 30px;
+                  }
+                }
+                @include mobile {
+                  .productImg {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // Used same style from Product page
+      .orderRight {
+        flex: 1;
+        padding: 20px;
+        color: themed('textColorSoft');
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+
+        @include tablet {
+          margin: auto;
+          width: 80%;
+        }
+
+        .summeryContainer {
+          padding: 20px;
+          background-color: themed('bg');
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            font-size: 20px;
+            font-weight: 300;
+          }
+          .summeryItem {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+
+            &.total {
+              padding: 15px 10px;
+            }
+        
+
+            .markAsDeliBtn {
+              padding: 10px;
+              border: none;
+              background-color: themed('buttonLight');
+              color: whitesmoke;
+              font-size: 16px;
+            }
+          }
+          .paypalBtnWrapper {
+            display: flex;
+            justify-content: center;
+          }
+          
+          hr {
+            border: none;
+            border-bottom: 1px solid themed('border');
+          }
+          .hrTotal {
+            border: none;
+            height: 1px;
+            border-top: 1px solid themed('border');
+            border-bottom: 1px solid themed('border');
+          }
+        }
+      }
+    }
+  }
+}

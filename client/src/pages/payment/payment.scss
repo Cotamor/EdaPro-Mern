@@ -1,0 +1,48 @@
+@import '../../global.scss';
+
+.payment {
+  @include themify($themes) {
+    width: 100%;
+    height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+
+    .paymentContainer {
+      margin: auto;
+      height: 100%;
+      max-width: 500px;
+      
+      margin: auto;
+      .paymentTitle {
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+      form {
+        padding: 20px;
+        width: 350px;
+        background-color: themed('bg');
+        display: flex;
+        flex-direction: column;
+
+        .formItem {
+          padding: 10px;
+          display: flex;
+          gap: 10px;
+        }
+
+        button {
+          border: none;
+          color: white;
+          background-color: themed('buttonLight');
+          align-self: end;
+          padding: 15px;
+          font-size: 16px;
+          width: 150px;
+
+margin-top: 20px;
+        }
+      }
+    }
+  }
+}

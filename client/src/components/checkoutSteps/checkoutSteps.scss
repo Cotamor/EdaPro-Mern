@@ -1,0 +1,36 @@
+@import '../../global.scss';
+
+.checkoutSteps {
+  @include themify($themes) {
+    width: 100%;
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+    
+    .stepsContainer {
+      margin: auto;
+      padding: 30px 0px;
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 50px;
+
+      @include tablet {
+        padding: 20px 0;
+        gap: 30px;
+      }
+      @include tablet {
+        padding: 20px 0;
+        gap: 20px;
+      }
+      .stepItem {
+        font-size: 18px;
+        .disabled-link {
+          pointer-events: none;
+          color: gray;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

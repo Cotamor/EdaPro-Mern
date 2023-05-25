@@ -1,0 +1,80 @@
+@import '../../../global.scss';
+
+.orderList {
+  @include themify($themes) {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+
+    .orderListContainer {
+      max-width: 1400px;
+      margin: auto;
+      padding: 50px;
+      .orderListTop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .title {
+          color: themed('textColorSoft');
+        }
+        .createBtn {
+          padding: 10px 20px;
+          color: white;
+          border: none;
+          font-weight: 500;
+          background-color: themed('button');
+        }
+      }
+      table {
+        width: 100%;
+        text-align: center;
+        color: themed('textColorSoft');
+        border-collapse: collapse;
+        background-color: themed('bg');
+        thead {
+          font-weight: 700;
+          font-size: 15px;
+
+          tr {
+            th {
+              padding: 8px 10px;
+              border: 1px solid themed('border');
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            td {
+              border: 1px solid themed('border');
+              padding: 5px 10px;
+              font-size: 14px;
+            }
+            .icon {
+              cursor: pointer;
+              font-size: 20px;
+            }
+            .iconCircle {
+              color: rgba(0, 100, 0, 0.8);
+            }
+            .iconClose {
+              color: rgba(220, 20, 60, 0.798);
+            }
+
+            .detailsBtn {
+              border: 1px solid gray;
+              padding: 5px;
+              color: inherit;
+              background-color: transparent;
+              border-radius: 5px;
+            }
+          }
+          tr:nth-child(odd) {
+            background-color: themed('bgTableOdd');
+          }
+        }
+      }
+    }
+  }
+}

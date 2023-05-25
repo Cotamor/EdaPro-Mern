@@ -1,0 +1,125 @@
+@import '../../global.scss';
+
+.profile {
+  @include themify($themes) {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+    overflow: hidden;
+
+    .profileContainer {
+      max-width: 1400px;
+      display: flex;
+      margin: auto;
+
+      @include tablet {
+        flex-direction: column;
+      }
+      .title {
+        font-size: 30px;
+      }
+      .profileLeft {
+        flex: 1;
+        padding: 20px;
+
+        form {
+          margin: auto;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          @include tablet {
+            width: 300px;
+          }
+          @include mobile {
+            width: 250px;
+          }
+          
+          label {
+            font-size: 14px;
+          }
+
+          input {
+            // width: 80%;
+            outline: none;
+            border: 1px solid themed('border');
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: transparent;
+            color: themed('textColorSoft');
+          }
+
+          .updateBtn {
+            width: 50%;
+            margin-right: 0;
+            padding: 10px;
+            border: none;
+            background-color: themed('buttonLight');
+            color: whitesmoke;
+            font-size: 16px;
+            margin-top: 10px;
+            align-self: center;
+
+            &:disabled {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+      .profileRight {
+        flex: 2;
+        padding: 20px;
+        // background-color: green;
+        @include tablet {
+          padding: 20px 10px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          thead {
+            border-bottom: 1px solid themed('border');
+          }
+
+          tbody {
+          }
+          tr {
+            border-bottom: 1px solid themed('border');
+            th {
+              text-align: center;
+              padding: 10px;
+            }
+            td {
+              text-align: center;
+              padding: 10px;
+
+              .productImg {
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+              }
+              button {
+                padding: 5px;
+                border: none;
+                background-color: themed('buttonLight');
+                color: whitesmoke;
+              }
+            }
+
+            @include tablet {
+              .tabletHide {
+                display: none;
+              }
+            }
+            @include mobile {
+              .mobileHide {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

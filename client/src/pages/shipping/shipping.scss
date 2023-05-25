@@ -1,0 +1,56 @@
+@import '../../global.scss';
+
+.shipping {
+  @include themify($themes) {
+    width: 100%;
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+    height: calc(100vh - 140px);
+    .shippingContainer {
+      width: 50%;
+      margin: auto;
+
+      @include tablet {
+        width: 70%;
+      }
+      @include mobile {
+        width: 80%;
+      }
+
+      .title {
+        font-size: 25px;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        label {
+        }
+
+        input {
+          // border: none;
+          border: 1px solid themed('border');
+          outline: none;
+          padding: 15px;
+          margin-bottom: 10px;
+          background-color: transparent;
+          color: themed('textColor');
+          font-size: 16px;
+        }
+
+        button {
+          border: none;
+          color: white;
+          background-color: themed('buttonLight');
+          align-self: end;
+          padding: 15px;
+          font-size: 16px;
+          width: 150px;
+        }
+      }
+    }
+  }
+}

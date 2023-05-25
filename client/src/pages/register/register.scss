@@ -1,0 +1,62 @@
+@import '../../global.scss';
+
+.register {
+  @include themify($themes) {
+    width: 100%;
+    height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: themed('bgSoft');
+    color: themed('textColor');
+
+    .formContainer {
+      padding: 30px 50px;
+      display: flex;
+      flex-direction: column;
+      background-color: themed('bg');
+      width: 350px;
+
+      .title {
+        // padding: 10px 0;
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      label {
+        color: themed('textColorSoft');
+        font-size: 14px;
+        font-weight: 300;
+        // margin-bottom: 5px;
+      }
+      .formInput {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid themed('border');
+        outline: none;
+        background-color: transparent;
+        color: inherit;
+
+        &::placeholder {
+          color: gray;
+        }
+      }
+      button {
+        margin: 10px 0 10px;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        color: whitesmoke;
+        background-color: themed('button');
+      }
+
+      span {
+        font-size: 14px;
+        color: themed('textColorSoft');
+        text-align: center;
+      }
+    }
+  }
+}

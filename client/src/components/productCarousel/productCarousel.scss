@@ -1,0 +1,109 @@
+@import '../../global.scss';
+
+.productCarousel {
+  @include themify($themes) {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+    @include tablet {
+      height: 100%;
+    }
+    .arrows {
+      position: absolute;
+      top: 50%;
+      z-index: 9;
+      .icon {
+        color: themed('textColorMild');
+        width: 40px;
+        height: 40px;
+        background: themed('bg');
+        filter: opacity(0.5);
+      }
+    }
+    .leftArrow {
+      left: 0;
+    }
+    .rightArrow {
+      right: 0;
+    }
+
+    .wrapper {
+      width: 300vw;
+      height: 100%;
+      display: flex;
+      transition: all 1s ease;
+
+      .slide {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+
+        @include tablet {
+          flex-direction: column;
+        }
+        .imgContainer {
+          flex: 1;
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include tablet {
+              height: 500px;
+            }
+          }
+        }
+
+        .infoContainer {
+          width: 100%;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 20px;
+          align-items: center;
+          background-color: transparent;
+
+          @include tablet {
+            flex: unset;
+            padding: 20px;
+            // height: 40%;
+          }
+          .title {
+            color: themed('textColorMild');
+            font-size: 35px;
+            text-align: center;
+            font-weight: 700;
+            width: 70%;
+          }
+          .desc {
+            color: themed('textColorMild');
+            width: 50%;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          button {
+            background-color: themed('button');
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-size: 18px;
+          }
+        }
+      }
+      .slide1 {
+        background-color: themed('sliderBg1');
+      }
+      .slide2 {
+        background-color: themed('sliderBg2');
+      }
+      .slide3 {
+        background-color: themed('sliderBg3');
+      }
+    }
+  }
+}

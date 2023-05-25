@@ -1,0 +1,130 @@
+@import '../../global.scss';
+
+.cart {
+  @include themify($themes) {
+    width: 100%;
+    height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+    color: themed('textColorSoft');
+    .cartWrapper {
+      max-width: 1400px;
+      display: flex;
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      .cartLeft {
+        flex: 3;
+        padding: 20px;
+
+        .backBtn {
+          padding: 15px;
+          border: none;
+          margin: 10px 0;
+          background-color: themed('buttonLight');
+          font-size: 14px;
+          font-weight: 500;
+          color: whitesmoke;
+        }
+
+        .title {
+          font-size: 30px;
+          margin: 20px 0;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          thead {
+            tr {
+              th {
+                padding: 10px 0;
+                border-bottom: 1px solid themed('border');
+              }
+              @include mobile {
+                .productImgTitle {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              text-align: center;
+              td {
+                padding: 10px;
+                border-bottom: 1px solid themed('border');
+                img {
+                  width: 70px;
+                  height: 50px;
+                  object-fit: cover;
+                }
+
+                select {
+                  width: 40px;
+                  height: 30px;
+                }
+              }
+              .deleteIcon {
+                cursor: pointer;
+              }
+
+              @include mobile {
+                .productImg {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      // Used same style from Product page
+      .cartRight {
+        flex: 1;
+        padding: 20px;
+        color: themed('textColorSoft');
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include tablet {
+          margin-left: auto;
+          width: 320px;
+        }
+
+        .subtotalContainer {
+          padding: 20px;
+          background-color: themed('bg');
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            font-size: 20px;
+            font-weight: 300;
+          }
+          .subtotal {
+            text-align: end;
+            padding: 20px;
+          }
+          hr {
+            border: none;
+            border-bottom: 1px solid themed('border');
+          }
+
+          .checkoutBtn {
+            margin-right: 0;
+            padding: 10px;
+            border: none;
+            background-color: themed('buttonLight');
+            color: whitesmoke;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

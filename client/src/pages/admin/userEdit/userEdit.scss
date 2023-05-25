@@ -1,0 +1,62 @@
+@import '../../../global.scss';
+
+.userEdit {
+  @include themify($themes) {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    background-color: themed('bgSoft');
+    .userEditContainer {
+      padding: 20px;
+      max-width: 1400px;
+      margin: auto;
+      .goBack {
+        padding: 10px;
+        align-self: start;
+      }
+      .formContainer {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        margin: auto;
+        color: themed('textColorSoft');
+        gap: 10px;
+
+        .title {
+          align-self: start;
+          margin-bottom: 20px;
+        }
+
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          label {
+            margin-bottom: 10px;
+          }
+
+          input {
+            padding: 10px;
+            margin-bottom: 10px;
+          }
+          .check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            .checkAdmin {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          button {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}

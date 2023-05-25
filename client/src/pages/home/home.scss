@@ -1,0 +1,71 @@
+@import '../../global.scss';
+
+.home {
+  @include themify($themes) {
+    background-color: themed('bgSoft');
+    color: themed('textColor');
+    overflow: hidden;
+    // height: 100;
+
+    .container {
+      padding: 40px 0px;
+      max-width: 1400px;
+      margin: auto;
+      .backBtn {
+        padding: 15px;
+        border: none;
+        margin: 10px 0;
+        background-color: themed('buttonLight');
+        font-size: 14px;
+        font-weight: 500;
+        color: whitesmoke;
+      }
+      .productListTitle {
+        color: themed('textColorSoft');
+        font-size: 35px;
+        margin: 20px 20px;
+      }
+
+      .productList {
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 15px;
+        color: themed('textColorSoft');
+
+        .productListItem {
+          border-radius: 5px;
+          margin-bottom: 10px;
+          overflow: hidden;
+          width: 280px;
+          height: max-content;
+          background-color: themed('bg');
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          .productItemImg {
+            width: 100%;
+            // max-width: 200px;
+            height: 180px;
+            object-fit: cover;
+          }
+          .itemInfo {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .productItemTitle {
+              width: 100%;
+              font-weight: 500;
+            }
+
+            .productItemPrice {
+              font-size: 23px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+}

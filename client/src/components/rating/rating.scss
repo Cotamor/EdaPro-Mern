@@ -1,0 +1,15 @@
+@import '../../global.scss';
+
+.rating {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    span {
+      color: goldenrod;
+    }
+    .rating-text {
+      margin-left: 10px;
+      color: themed('textColorSoft');
+    }
+  }
+}
