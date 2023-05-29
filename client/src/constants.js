@@ -1,5 +1,7 @@
 // On production:
-export const BASE_URL = 'https://edapro-api.onrender.com/';
+// export const BASE_URL = 'https://edapro-api.onrender.com/';
+// For testing
+export const BASE_URL = 'https://edapro.onrender.com/';
 // On development:
 // export const BASE_URL = 'http://localhost:8000';
 // export const BASE_URL = ''; // If using proxy
