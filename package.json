@@ -2,7 +2,7 @@
   "name": "edapro",
   "version": "1.0.0",
   "description": "Ecommerce application built with the MERN stack",
-  "main": "./api/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node backend/server.js",
