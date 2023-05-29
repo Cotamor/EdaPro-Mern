@@ -43,7 +43,7 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<Error />}>
-      <Route index={true} element={<Home />} />
+      <Route index={true} path='/' element={<Home />} />
       <Route path="/search/:keyword" element={<Home />} />
       <Route path="/page/:pageNumber" element={<Home />} />
       <Route path="/search/:keyword/page/:pageNumber" element={<Home />} />
