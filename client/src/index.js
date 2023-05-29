@@ -44,30 +44,30 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<Error />}>
       <Route index={true} element={<Home />} />
-      <Route path="/search/:keyword" element={<Home />} />
-      <Route path="/page/:pageNumber" element={<Home />} />
-      <Route path="/search/:keyword/page/:pageNumber" element={<Home />} />
-      <Route path="/product/:id" element={<Product />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="search/:keyword" element={<Home />} />
+      <Route path="page/:pageNumber" element={<Home />} />
+      <Route path="search/:keyword/page/:pageNumber" element={<Home />} />
+      <Route path="product/:id" element={<Product />} />
+      <Route path="cart" element={<Cart />} />
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
 
       {/* REGISTER USERS */}
       <Route element={<PrivateRoute />}>
-        <Route path="/shipping" element={<Shipping />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/placeorder" element={<PlaceOrder />} />
-        <Route path="/order/:id" element={<Order />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="shipping" element={<Shipping />} />
+        <Route path="payment" element={<Payment />} />
+        <Route path="placeorder" element={<PlaceOrder />} />
+        <Route path="order/:id" element={<Order />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
       {/* ADMIN USERS */}
       <Route element={<AdminRoute />}>
-        <Route path="/admin/orderlist" element={<OrderList />} />
-        <Route path="/admin/productlist" element={<ProductList />} />
-        <Route path="/admin/productlist/:pageNumber" element={<ProductList />} />
-        <Route path="/admin/userlist" element={<UserList />} />
-        <Route path="/admin/product/:id/edit" element={<ProductEdit />} />
-        <Route path="/admin/user/:id/edit" element={<UserEdit />} />
+        <Route path="admin/orderlist" element={<OrderList />} />
+        <Route path="admin/productlist" element={<ProductList />} />
+        <Route path="admin/productlist/:pageNumber" element={<ProductList />} />
+        <Route path="admin/userlist" element={<UserList />} />
+        <Route path="admin/product/:id/edit" element={<ProductEdit />} />
+        <Route path="admin/user/:id/edit" element={<UserEdit />} />
       </Route>
     </Route>
   )
