@@ -10,6 +10,7 @@ import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { toast } from 'react-toastify'
+import moment from 'moment-timezone'
 
 const Order = () => {
   const PF = process.env.REACT_APP_PF
@@ -123,7 +124,12 @@ const Order = () => {
                   {`${order.shippingAddress.address}, ${order.shippingAddress.city}, ${order.shippingAddress.postalCode} ${order.shippingAddress.country}`}
                 </span>
                 {order.isDelivered ? (
-                  <span className="status">Delivered</span>
+                  <span className="status">
+                    Delivered on{' '}
+                    {moment(order.deliveredAt)
+                      .tz('Asia/Tokyo')
+                      .format('YYYY-MM-DD HH:mm')}
+                  </span>
                 ) : (
                   <span className="status notyet">Not Delivered</span>
                 )}
@@ -134,7 +140,12 @@ const Order = () => {
                   <b>Payment</b>: {order.paymentMethod}
                 </span>
                 {order.isPaid ? (
-                  <span className="status">Paid</span>
+                  <span className="status">
+                    Paid on{' '}
+                    {moment(order.paidAt)
+                      .tz('Asia/Tokyo')
+                      .format('YYYY-MM-DD HH:mm')}
+                  </span>
                 ) : (
                   <span className="status notyet">Not Paid</span>
                 )}
