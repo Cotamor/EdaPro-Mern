@@ -14,7 +14,7 @@ import path from 'path'
 import cors from 'cors'
 import { fileURLToPath } from 'url'
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 const db = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI)
@@ -26,19 +26,24 @@ const db = async () => {
 }
 const app = express()
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Credentials', true)
-  next()
-})
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Credentials', true)
+//   next()
+// })
 
-app.use(
-  cors({
-    origin: ['http://localhost:3000', 'https://edapro.onrender.com', 'https://edasaki.net'],
-    credentials: true,
-  })
-)
+// app.use(
+//   cors({
+//     origin: [
+//       'http://localhost:5000',
+//       'https://edapro.onrender.com',
+//       'https://edasaki.net',
+//     ],
+//     credentials: true,
+//   })
+// )
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 // app.use(morgan('dev'))
 
@@ -52,9 +57,10 @@ app.get('/api/config/paypal', (req, res) =>
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
 )
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
+const __dirname = path.resolve()
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
 // TODO: not sure what the code below means... need to check on the internet later..
 if (process.env.NODE_ENV === 'production') {
