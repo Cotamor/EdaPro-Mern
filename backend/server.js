@@ -8,11 +8,9 @@ import userRoute from './routes/userRoute.js'
 import productRoute from './routes/productRoute.js'
 import orderRoute from './routes/orderRoute.js'
 import uploadRoute from './routes/uploadRoute.js'
-// import morgan from 'morgan'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 import path from 'path'
-import cors from 'cors'
-import { fileURLToPath } from 'url'
+
 
 const port = process.env.PORT || 5000
 const db = async () => {
@@ -26,26 +24,9 @@ const db = async () => {
 }
 const app = express()
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Credentials', true)
-//   next()
-// })
-
-// app.use(
-//   cors({
-//     origin: [
-//       'http://localhost:5000',
-//       'https://edapro.onrender.com',
-//       'https://edasaki.net',
-//     ],
-//     credentials: true,
-//   })
-// )
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-// app.use(morgan('dev'))
 
 app.use('/api/auth', authRoute)
 app.use('/api/users', userRoute)

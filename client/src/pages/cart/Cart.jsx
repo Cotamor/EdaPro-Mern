@@ -6,6 +6,7 @@ import { addToCart, removeFromCart } from '../../slices/cartSlice'
 
 const Cart = () => {
   const PF = process.env.REACT_APP_PF
+  console.log(PF)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
